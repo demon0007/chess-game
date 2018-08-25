@@ -1,4 +1,4 @@
-#Multi Player Chess Game
+# Multi Player Chess Game
 
 A Project by :
 	-Priyesh Shrivastava
