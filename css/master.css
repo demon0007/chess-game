@@ -1,0 +1,175 @@
+:root {
+    --maxPull: -20;
+    --hoverPull: -10;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    overflow: hidden;
+}
+
+.userName {
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 25px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.chess {
+    background: #fff;
+    border-radius: 10px;
+    max-width: 700px;
+    max-height: 730px;
+    min-height: 730px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    transition: transform 2s ease-in-out;
+    transform: translate(-50%, -50%) perspective(2000px) rotateX(65deg) rotateZ(45deg);
+    /* -webkit-transform: perspective(200px) rotateX(30deg); */
+    /* transform: rotate3d(1, 0, 0, 80deg); */
+     border: 5px solid #ddd; 
+}
+
+#piece {
+    width: 100%;
+    transition: transform 2s ease;
+    transform: perspective(2000px) rotateX(20deg) rotateZ(-45deg);
+}
+
+.r8:nth-child(odd), .r7:nth-child(even), .r6:nth-child(odd), .r5:nth-child(even), .r4:nth-child(odd), .r3:nth-child(even), .r2:nth-child(odd), .r1:nth-child(even)  {
+    background-color: #708090;
+}
+
+.whiteTurn {
+    transform: translate(-50%, -50%) perspective(2000px) rotateX(60deg) rotateZ(0deg);
+    /* --maxPull: calc(var(--maxPull) * -1); */
+    /* --hoverPull: calc(var(--hoverPull) * -1); */
+}
+
+.whiteTurn #piece {
+    transform: perspective(2000px) rotateX(0deg) rotateZ(0deg);
+}
+
+.blackTurn {
+    transform: translate(-50%, -50%) perspective(2000px) rotateX(60deg) rotateZ(180deg);
+    /* --maxPull: calc(var(--maxPull) * -1); */
+    /* --hoverPull: calc(var(--hoverPull) * -1); */
+}
+
+.blackTurn #piece {
+    transform: perspective(2000px) rotateX(00deg) rotateZ(180deg);
+}
+
+
+.status-div {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #eee;
+    width: 40vw;
+    height: 5vh;
+}
+
+.status-div div {
+    width: 100%;
+    height: 50%;
+}
+
+.status-div div:nth-child(odd) {
+    background-color: #ddd;
+}
+
+.gamecell{
+    border: 1px solid #1a8cff;
+    margin: 3px;
+    border-radius: 10px;
+    padding: 4px 6px 7px;
+
+}
+.mouseH:hover{
+	color: #fff;
+	background: rgba(37, 88, 228, 0.7);
+	transform: translate(0px, calc(var(--hoverPull) * 1px));
+    /* z-index: 2; */
+	/* animation: solution 1.5s ease-in-out infinite alternate; */
+}
+
+.movesPossible{
+	color: #fff;
+    border: 4px solid rgba(153, 255, 153, 1);
+	transform: translate(0px, calc(var(--maxPull) * 1px));
+    /* background-color: rgba(153, 255, 153, 0.7); */
+	/* animation: solution 1.5s ease-in-out infinite alternate; */
+}
+
+.movesPossible:hover{
+	color: #fff;
+	background-color: rgba(37, 88, 228, 0.7);
+	transform: translate(0px, calc(var(--hoverPull) * 1px));
+	/* animation: solution 1.5s ease-in-out infinite alternate; */
+    /* z-index: 2; */
+}
+
+.check {
+    border: 4px solid rgba(255,76,76, 0.7);
+}
+
+#checkMate {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 30vh;
+    background-color: lightslategray;
+    color: ghostwhite;
+    font-size: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: top 100ms ease-in-out;
+}
+
+#automatching {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: ghostwhite;
+    font-weight: 600;
+}
+
+.timer {
+/*    position: absolute;*/
+    top: 20%;
+    left: 50%;
+/*    transform: translateX(-50%);*/
+    width: 100%;
+/*    height: 40vh;*/
+/*    border: 1px solid black;*/
+}

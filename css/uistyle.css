@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 20px;
+}
+
+body, html {
+  background: #333;
+/*    background-image: url(2.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  margin: 0;
+  body: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.center, .body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body {
+    display: flex;
+    background: url(2.jpg);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.contain {
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.bottomLayer {
+  width: 25em;
+  height: 14em;
+  background: black;
+  color: white;
+  z-index: 1;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+.bottomLayer:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.bottomLayer h1 {
+  font-size: 0.5em;
+}
+
+.left,
+.right {
+  float: left;
+  margin-left: 2.5em;
+  width: 8em;
+}
+.left div,
+.right div {
+  font-size: 0.9em;
+}
+.left p,
+.right p {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.topLayer {
+  position: absolute;
+  width: 12.5em;
+  height: 16em;
+  background: white;
+  border-radius: 3px;
+  top: -1em;
+  left: 1.5em;
+  transition: all 300ms cubic-bezier(0.68, 0.6, 0.265, 1.55);
+  overflow: hidden;
+  box-shadow: 8px 4px 19px 1px rgba(0, 0, 0, 0.4);
+}
+.topLayer.move {
+  -webkit-transform: translate(10em);
+          transform: translate(10em);
+}
+.topLayer:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.topLeft,
+.topRight {
+  position: absolute;
+  margin-top: 2em;
+  width: 10em;
+}
+.topLeft .header,
+.topRight .header {
+  color: #F68B7A;
+  margin-bottom: 2em;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+}
+
+.topLeft {
+  left: 1em;
+  transition: all 125ms ease-in;
+}
+.topLeft.moved {
+  -webkit-transform: translate(-11em);
+          transform: translate(-11em);
+}
+
+.topRight {
+  left: 13em;
+  transition: all 150ms ease-in;
+}
+.topRight.moved2 {
+  -webkit-transform: translate(-12em);
+          transform: translate(-12em);
+}
+
+.inputs {
+  font-size: 0.4em;
+  width: 24.5em;
+  letter-spacing: 0.2em;
+  border: 0;
+  outline: none;
+  background: transparent;
+  border-bottom: 1.5px solid tint(grey, 50%);
+  padding: 1em 0;
+  margin: 0.3em 0;
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.7;
+}
+
+:-ms-input-placeholder {
+  opacity: 0.7;
+}
+
+::-ms-input-placeholder {
+  opacity: 0.7;
+}
+
+::placeholder {
+  opacity: 0.7;
+}
+
+.btn {
+  font-size: 0.8rem;
+  border: 1px white solid;
+  border-radius: 2px;
+  color: red;
+  padding: 0.3em 3em;
+  cursor: pointer;
+}
+
+.btn-slide {
+  background: transparent;
+}
+
+.btn-start {
+  background: #F68B7A;
+  border: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+
+#label {
+    font-size:1rem;
+}
+
+a:link {
+  font-size: 0.4em;
+  text-decoration: none;
+  color: grey;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+}
+
+.start-contain,
+.start-contain {
+  margin-top: 1em;
+}
+
+.start-contain {
+  text-align: right;
+}
+
+.start-contain {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  background-color: black;
+    border: none;
+    border-radius: :%
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+      font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+  margin-top: 20%;
+  opacity: 0.7;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-box-shadow:    0 8px 0 #000000, 0 15px 20px rgba(0, 0, 0, .60);
+}
+.button:active {
+  background-color: #FF0000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.btn-active {
+    background-color: #FF0000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button:hover span {
+    background-color: #ec6a9c;
+    text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8);
+}
+
+.button1 {background-color: #e7e7e7;
+  border-radius: 50%
+  } /* Gray */
+.button2 {background-color: #555555;  border-radius: 50%} /* Black */

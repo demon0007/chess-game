@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+       div {
+           border: 2px solid black;
+       }
+       
+       body:hover .rightbox {
+           right: 0px;
+       }
+       .leftbox {
+           position: absolute;
+           left: 0;
+           bottom: 0;
+           top: 0;
+           width: 200px;
+       }
+       .rightbox {
+           position: absolute;
+           right: -200px;
+           bottom: 0;
+           top: 0;
+           width: 200px;
+           transition: right 500ms;
+       }
+    </style>
+    <div class="leftbox"></div>
+    <div class="rightbox"></div>
+    <script type="text/javascript" src="js/movement.js"></script>
+</body>
+</html>
